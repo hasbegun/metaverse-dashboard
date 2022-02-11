@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 # Start the metaverseserver with persistant data in local dir
 
 BASE=$(pwd)
