@@ -1,24 +1,21 @@
 FROM ubuntu:20.04
 
-# default is 'vircadia'
-ARG REPO=hasbegun
-# default is 'master'
-ARG BRANCH=dev_ssl
+# For debug and dev change repo and branch at the build script.
+ARG REPO=vircadia
+ARG BRANCH=master
 ARG COMMIT=""
 
-LABEL branch=${BRANCH}
-LABEL commit=${COMMIT}
-
 RUN apt update && apt install -y git curl
+# install node16
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
     bash ./nodesource_setup.sh && \
     apt install nodejs && \
     rm ./nodesource_setup.sh
-
 RUN npm install -g @vue/cli@latest
 
-RUN apt-get update
 # checkout repo
+LABEL commit=${COMMIT}
+LABEL branch=${BRANCH}
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
     git clone --depth 1 --branch ${BRANCH} https://github.com/${REPO}/metaverse-dashboard.git
@@ -38,5 +35,5 @@ USER ${USER}:${USER}
 RUN mkdir -p /home/${USER}/${METAVERSEDASHBOARD}/log
 COPY --chown=${USER}:${USER} ./files/run-metaverse-dashboard.sh /home/${USER}/
 
-EXPOSE 8080
+EXPOSE 8088
 ENTRYPOINT [ "/home/cadia/run-metaverse-dashboard.sh" ]
