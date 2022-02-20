@@ -12,9 +12,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
 
 RUN npm install -g @vue/cli@latest
 
-# break docker cache
-ARG CACHEBUST=1
-
+RUN apt-get update
 # checkout repo
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
