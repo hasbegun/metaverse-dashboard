@@ -4,7 +4,6 @@ FROM ubuntu:20.04
 ARG REPO=hasbegun
 # default is 'master'
 ARG BRANCH=dev_ssl
-
 RUN apt update && apt install -y git curl
 RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
     bash ./nodesource_setup.sh && \
@@ -12,6 +11,9 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
     rm ./nodesource_setup.sh
 
 RUN npm install -g @vue/cli@latest
+
+# break docker cache
+ARG CACHEBUST=1
 
 # checkout repo
 RUN mkdir -p /usr/local/src && \
