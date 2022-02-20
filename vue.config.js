@@ -11,7 +11,10 @@ module.exports = {
     configureWebpack: {
         devServer: {
             headers: { 'Access-Control-Allow-Origin': '*' },
-            // disableHostCheck: true  // risky
+            //-- SECURITY --//
+            // Do not set this flag to resolce NGINX "invalid host request" error.
+            // disableHostCheck: true
+            /////////////////
             public: 'dashboard.innoxai.com:8088'
         }
     }
