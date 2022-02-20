@@ -10,7 +10,9 @@ module.exports = {
     ],
     configureWebpack: {
         devServer: {
-            headers: { 'Access-Control-Allow-Origin': '*' }
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            disableHostCheck: true  // risky
+            // public: 'dashboard.innoxai.com:8088'
         }
     }
 }

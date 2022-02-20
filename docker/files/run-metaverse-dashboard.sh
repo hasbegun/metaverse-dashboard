@@ -13,4 +13,4 @@ mkdir -p "${LOGDIR}"
 LOGFILE=${LOGDIR}/$(date --utc "+%Y%m%d.%H%M").log
 
 cd /usr/local/src/metaverse-dashboard
-npm run serve >> ${LOGFILE} 2>&1
+npm run serve -- --port 8088 >> ${LOGFILE} 2>&1
