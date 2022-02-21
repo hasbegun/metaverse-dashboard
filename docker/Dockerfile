@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.04 as base-build
 
 RUN apt update && apt install -y git curl
 # install node16
@@ -8,6 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
     rm ./nodesource_setup.sh
 RUN npm install -g @vue/cli@latest
 
+FROM base-build
 # For debug and dev change repo and branch at the build script.
 ARG REPO=vircadia
 ARG BRANCH=master
