@@ -17,9 +17,7 @@ module.exports = {
             // Do not set this flag to resolve the "invalid host request" error.
             // disableHostCheck: true
             /////////////////
-            // public: 'dashboard.innoxai.com:8088',
-            host: 'dashboard.innoxai.com',
-            port : 8088
+            public: 'dashboard.innoxai.com:8088',
         }
     }
 }
