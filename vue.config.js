@@ -18,7 +18,7 @@ module.exports = {
             // case 1
             // public: 'dashboard.innoxai.com:8088',
 
-            // case 2
+            // This will resolve sockjs-node err_protocol_ssl
             public: 'dashboard.innoxai.com',
             host : '0.0.0.0',
             disableHostCheck: true
