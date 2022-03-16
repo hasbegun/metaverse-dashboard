@@ -33,7 +33,8 @@ export default new Vuex.Store({
             nickname: '',
             // server: 'https://metaverse.bluestuff.org:9400', // This needs to at least be pre-filled in order to get all other config information.
             // server: 'https://metaverse.vircadia.com/live', // This needs to at least be pre-filled in order to get all other config information.
-            server: 'vircadia-metaverse-server:9400', // docker-compose
+            // server: 'vircadia-metaverse-server:9400', // docker-compose
+            server: 'https://metaverse.innoxai.com', // docker-compose
             iceServer: '',
             serverVersion: ''
         },
