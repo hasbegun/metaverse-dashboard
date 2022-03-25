@@ -19,9 +19,9 @@ module.exports = {
             // public: 'dashboard.innoxai.com:8088',
 
             // This will resolve sockjs-node err_protocol_ssl
-            public: 'dashboard.innoxai.com',
-            host : '0.0.0.0',
-            disableHostCheck: true
+            // public: 'dashboard.innoxai.com',
+            // host : '0.0.0.0',
+            // disableHostCheck: true
         }
     }
 }
