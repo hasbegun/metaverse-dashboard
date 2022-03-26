@@ -129,6 +129,8 @@ function initStore () {
         scope: localStorage.getItem('scope') // string
     }
 
+    console.info('>>> acct info', accountItems);
+
     store.commit('mutate', {
         property: 'account',
         with: accountItems
