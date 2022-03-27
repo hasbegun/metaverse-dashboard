@@ -19,10 +19,10 @@ module.exports = {
             // public: 'dashboard.vircadiatest.com:8088',
 
             // This will resolve sockjs-node err_protocol_ssl
-            // public: 'dashboard.vircadiatest.com',
-            // host : '0.0.0.0',
-            // compress: true,
-            // disableHostCheck: true
+            public: 'dashboard.vircadiatest.com',
+            host : '0.0.0.0',
+            compress: true,
+            disableHostCheck: true
         }
     }
 }
